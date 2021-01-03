@@ -1,0 +1,6 @@
+MODULE    = msvcrt20.dll
+IMPORTS   = msvcrt
+
+EXTRADLLFLAGS = -mno-cygwin
+
+C_SRCS = msvcrt20.c

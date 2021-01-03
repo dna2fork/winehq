@@ -1,0 +1,69 @@
+EXTRADEFS = -D_GDI32_
+MODULE    = gdi32.dll
+IMPORTLIB = gdi32
+IMPORTS   = advapi32
+EXTRAINCL = $(FREETYPE_CFLAGS) $(FONTCONFIG_CFLAGS)
+EXTRALIBS = $(CARBON_LIBS) $(APPKIT_LIBS)
+DELAYIMPORTS = setupapi
+
+EXTRADLLFLAGS = -mno-cygwin
+
+C_SRCS = \
+	bidi.c \
+	bitblt.c \
+	bitmap.c \
+	brush.c \
+	clipping.c \
+	dc.c \
+	dib.c \
+	dibdrv/bitblt.c \
+	dibdrv/dc.c \
+	dibdrv/graphics.c \
+	dibdrv/objects.c \
+	dibdrv/opengl.c \
+	dibdrv/primitives.c \
+	driver.c \
+	enhmetafile.c \
+	enhmfdrv/bitblt.c \
+	enhmfdrv/dc.c \
+	enhmfdrv/graphics.c \
+	enhmfdrv/init.c \
+	enhmfdrv/objects.c \
+	font.c \
+	freetype.c \
+	gdiobj.c \
+	icm.c \
+	mapping.c \
+	metafile.c \
+	mfdrv/bitblt.c \
+	mfdrv/dc.c \
+	mfdrv/graphics.c \
+	mfdrv/init.c \
+	mfdrv/objects.c \
+	mfdrv/text.c \
+	opengl.c \
+	opentype.c \
+	painting.c \
+	palette.c \
+	path.c \
+	pen.c \
+	printdrv.c \
+	region.c \
+	uniscribe/bidi.c \
+	uniscribe/bracket.c \
+	uniscribe/breaking.c \
+	uniscribe/direction.c \
+	uniscribe/indic.c \
+	uniscribe/indicsyllable.c \
+	uniscribe/linebreak.c \
+	uniscribe/mirror.c \
+	uniscribe/opentype.c \
+	uniscribe/shape.c \
+	uniscribe/shaping.c \
+	uniscribe/usp10.c \
+	vertical.c \
+	vulkan.c
+
+RC_SRCS = gdi32.rc
+
+font_EXTRADEFS = -DWINE_FONT_DIR=\"`${MAKEDEP} -R ${datadir}/wine ${fontdir}`\"

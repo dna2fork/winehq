@@ -1,0 +1,117 @@
+The Wine development release 6.0-rc5 is now available.
+
+What's new in this release (see below for details):
+  - Bug fixes only, we are in code freeze.
+
+The source is available from the following locations:
+
+  https://dl.winehq.org/wine/source/6.0/wine-6.0-rc5.tar.xz
+  http://mirrors.ibiblio.org/wine/source/6.0/wine-6.0-rc5.tar.xz
+
+Binary packages for various distributions will be available from:
+
+  https://www.winehq.org/download
+
+You will find documentation on https://www.winehq.org/documentation
+
+You can also get the current source directly from the git
+repository. Check https://www.winehq.org/git for details.
+
+Wine is available thanks to the work of many people. See the file
+AUTHORS in the distribution for the complete list.
+
+----------------------------------------------------------------
+
+Bugs fixed in 6.0-rc5 (total 21):
+
+  21987  Acrobat 7 tryout installer complains: "This Postscript Driver or Windows Platform (Win9x/Me) not supported" (winspool.drv missing level 8/global default printer settings handling)
+  38166  Heroes of Might and Magic V performance issue: severe fps drop on certain maps
+  41593  Molot VST 0.3.1 UI: some knobs are not rendered
+  43852  Monkey Island Special Edition Collection: White screen and crash when starting Monkey1.exe
+  44243  Spire and Serum VST plugins using Direct2D render very slowly
+  44367  Multiple applications need d2d FillEllipse/DrawEllipse implementation (OP-X PRO II VST)
+  44454  Windows Media Encoder 9 refuses to install
+  44574  Microsoft Office 2013 client area is rendered black (Direct2D)
+  45096  MPC-HC 1.7.13 displays a message box: "Error creating EVR Custom renderer", "DXVA2CreateDirect3DDeviceManager9 failed"
+  47770  Waves Central plugin installation fails
+  47824  Remote Life 1.2 demo terminates with 'Cannot load library nw_elf.dll'
+  48142  shell32:appbar tests fail on some Windows 10 machines
+  49010  ilok license manager: doesn't connect to the activation server as in 4.0.2
+  49356  Saya No Uta (a.k.a. The Song of Saya) crashes when launching
+  49771  ntdll:exception causes an unhandled segmentation fault
+  50241  Vertical Text in NL5 schematic doesn't display correctly
+  50304  Control-C exits winedbg instead of stopping the inferior
+  50397  dlls/d3dcompiler_43/tests/hlsl_d3d11.c: error: unknown field ‘Texture2D’ specified in initializer
+  50408  wineboot crash to due getaddrinfo() returning NULL ai_canonname
+  50420  Divinity: Original Sin - Enhanced Edition crashes on startup
+  50423  dlls/devenum/mediacatenum.c: | function ‘property_bag_Read’ | error: unknown field ‘cPins2’ specified in initializer
+
+----------------------------------------------------------------
+
+Changes since 6.0-rc4:
+
+Akihiro Sagawa (1):
+      readme: Update Japanese translation.
+
+Alex Henrie (1):
+      winebus: Remove redundant preprocessor check for libsdl2.
+
+Alexandre Julliard (1):
+      Update copyright info for 2021.
+
+Alistair Leslie-Hughes (1):
+      include: Add DBACCESSORFLAGSENUM/DBBINDSTATUSENUM values.
+
+Anton Baskanov (1):
+      winegstreamer: Unmap and unref the buffer and release the sample before returning.
+
+Byeong-Sik Jeon (1):
+      po: Update Korean translation.
+
+Damjan Jovanovic (1):
+      ws2_32: Deal with getaddrinfo() returning NULL ai_canonname despite AI_CANONNAME.
+
+Dean M Greer (2):
+      readme: Update OS X requirements.
+      configure: Remove Xcode 3.x check.
+
+Esme Povirk (1):
+      user32/tests: Don't kill explorer to test shell window.
+
+Jacek Caban (2):
+      condrv: Don't requre write access for IOCTL_CONDRV_CTRL_EVENT ioctl.
+      conhost: Ignore CONTROL_C_EXIT exceptions in Unix mode.
+
+Jefferson Carpenter (1):
+      ntdll/tests: Clear AC flag in align check test.
+
+Lauri Kenttä (1):
+      readme: Update Finnish translation.
+
+Michael Stefaniuc (1):
+      msscript.ocx/tests: Use wide-char string literals.
+
+Nikolay Sivov (1):
+      readme: Update Russian translation.
+
+Paul Gofman (2):
+      ntdll: Use WINAPI calling convention for stub_entry_point().
+      user32: Add stub for SetDisplayConfig().
+
+Qijia Liu (1):
+      winedbg: Remove arm_disasm_branchreg.
+
+Sveinar Søpler (1):
+      readme: Update Norwegian translation.
+
+Zebediah Figura (3):
+      httpapi/tests: Avoid some test failures with newer Windows 10.
+      devenum: Avoid initializing nameless unions in designated initializers.
+      server: Pass the correct size to sockaddr_from_unix() (Valgrind).
+
+Zhiyi Zhang (1):
+      winex11.drv: Check that there are connected outputs before using XRandR 1.4.
+
+--
+Alexandre Julliard
+julliard@winehq.org

@@ -1,0 +1,6 @@
+MODULE    = msvcrt40.dll
+
+EXTRADLLFLAGS = -mno-cygwin
+
+C_SRCS = \
+	msvcrt40.c
